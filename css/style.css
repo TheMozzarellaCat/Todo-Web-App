@@ -1,0 +1,223 @@
+[data-theme=dark] {
+  --background-color: hsl(235, 21%, 11%);
+  --title-text: white;
+  --create-new-task-background: hsl(235, 24%, 19%);
+  --create-task-input-text: white;
+  --task-background: hsl(235, 24%, 19%);
+  --task-text: hsl(234, 39%, 85%);
+  --task-background-border-color: hsl(237, 14%, 26%);
+  --option-container-background: hsl(235, 24%, 19%);
+  --footer-background: hsl(235, 24%, 19%);
+  --footer-text: white;
+}
+
+[data-theme=light] {
+  --background-color: hsl(236, 33%, 92%);
+  --title-text: white;
+  --create-new-task-background: hsl(0, 0%, 98%);
+  --create-task-input-text: black;
+  --task-background: hsl(0, 0%, 98%);
+  --task-text: hsl(235, 24%, 19%);
+  --task-background-border-color: hsl(234, 39%, 85%);
+  --option-container-background: hsl(0, 0%, 98%);
+  --footer-background: hsl(0, 0%, 98%);
+  --footer-text: hsl(235, 24%, 19%);
+}
+
+body {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  height: auto;
+  width: 100%;
+  background-color: var(--background-color);
+}
+
+main {
+  background-image: url(/images/bg-mobile-dark.jpg);
+  background-size: cover;
+  height: 20vh;
+  padding: 4vh 6%;
+  box-sizing: border-box;
+}
+main header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main header h1 {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: var(--title-text);
+  height: 3.5vh;
+}
+main header .theme-change-icon {
+  height: 3vh;
+}
+main .todo-list-container .create-new-task {
+  background-color: var(--create-new-task-background);
+  width: 100%;
+  height: 5vh;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+main .todo-list-container .create-new-task input[type=text] {
+  font-family: "Josefin Sans";
+  background-color: transparent;
+  border: none;
+  color: var(--create-task-input-text);
+  caret-color: hsl(220, 98%, 61%);
+  height: 3vh;
+  font-size: 1.5vh;
+}
+main .todo-list-container .create-new-task input[type=text]:focus {
+  outline: none;
+}
+main .todo-list-container .create-new-task input[type=checkbox] {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border: 1px solid hsl(234, 11%, 52%);
+  user-select: none;
+  border-radius: 50%;
+  margin: 0 5%;
+  position: relative;
+}
+main .todo-list-container .create-new-task input[type=checkbox]:checked::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-radius: 50%;
+}
+main .todo-list-container .create-new-task input[type=checkbox]:checked::after {
+  content: url(/images/icon-check.svg);
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+main .todo-list-container .task-background {
+  background-color: var(--task-background);
+  width: 100%;
+  height: 5vh;
+  border-radius: 0;
+  border-bottom: 1px var(--task-background-border-color) solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-right: 5%;
+}
+main .todo-list-container .task-background .check-task {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+main .todo-list-container .task-background .check-task .checkbox {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border: 1px solid hsl(234, 11%, 52%);
+  user-select: none;
+  border-radius: 50%;
+  margin: 0 5%;
+  position: relative;
+}
+main .todo-list-container .task-background .check-task .checkbox:checked::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border-radius: 50%;
+}
+main .todo-list-container .task-background .check-task .checkbox:checked::after {
+  content: url(/images/icon-check.svg);
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+main .todo-list-container .task-background .task-text {
+  color: var(--task-text);
+  font-weight: 500;
+  font-size: 14px;
+}
+main .todo-list-container .task-background .close-task-icon {
+  height: 18px;
+  width: 18px;
+  background-image: url(/images/icon-cross.svg);
+  cursor: pointer;
+}
+main .todo-list-container .first-task {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+main .todo-list-container .option-container {
+  background-color: var(--option-container-background);
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 5%;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+main .todo-list-container .option-container .items-left {
+  color: hsl(233, 14%, 35%);
+  font-size: 1.5vh;
+}
+main .todo-list-container .option-container .clear-completed {
+  color: hsl(233, 14%, 35%);
+  font-size: 1.5vh;
+  cursor: pointer;
+}
+main .todo-list-container .option-container .clear-completed:hover {
+  color: white;
+}
+main footer {
+  background-color: var(--footer-background);
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 20%;
+  border-radius: 6px;
+  margin-top: 2vh;
+}
+main footer .show-all {
+  color: var(--footer-text);
+  font-size: 1.5vh;
+}
+main footer .show-active {
+  color: var(--footer-text);
+  font-size: 1.5vh;
+}
+main footer .show-completed {
+  color: var(--footer-text);
+  font-size: 1.5vh;
+}
+main footer .active {
+  color: hsl(220, 98%, 61%);
+}
+
+/*# sourceMappingURL=style.css.map */

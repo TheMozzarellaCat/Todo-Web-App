@@ -1,0 +1,227 @@
+@use 'variables' as *;
+
+[data-theme='dark'] {
+    --background-color: #{$Very-Dark-Blue};
+    --title-text: white;
+    --create-new-task-background: #{$Very-Dark-Desaturated-Blue};
+    --create-task-input-text: white;
+    --task-background: #{$Very-Dark-Desaturated-Blue};
+    --task-text: #{$Light-Grayish-Blue};
+    --task-background-border-color: #{$Very-Dark-Grayish-Blue-2};
+    --option-container-background: #{$Very-Dark-Desaturated-Blue};
+    --footer-background: #{$Very-Dark-Desaturated-Blue};
+    --footer-text: white;
+  // other dark theme variables
+}
+
+[data-theme='light'] {
+    --background-color: #{$Very-Light-Grayish-Blue};
+    --title-text: white;
+    --create-new-task-background: #{$Very-Light-Gray};
+    --create-task-input-text: black;
+    --task-background: #{$Very-Light-Gray};
+    --task-text: #{$Very-Dark-Desaturated-Blue};
+    --task-background-border-color: #{$Light-Grayish-Blue};
+    --option-container-background: #{$Very-Light-Gray};
+    --footer-background: #{$Very-Light-Gray};
+    --footer-text: #{$Very-Dark-Desaturated-Blue};
+  // other light theme variables
+}
+
+body {
+    font-size: 18px;
+    font-family: "Josefin Sans", sans-serif;
+    margin: 0;
+    height: auto;
+    width: 100%;
+    background-color: var(--background-color);
+}
+main{
+    background-image: url(/images/bg-mobile-dark.jpg);
+    background-size: cover;
+    height: 20vh;
+    padding: 4vh 6%;
+    box-sizing: border-box;
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            color: var(--title-text);
+            height: 3.5vh;
+        }
+        .theme-change-icon{
+            height: 3vh;
+        }
+    }
+    .todo-list-container{
+        .create-new-task{
+            background-color: var(--create-new-task-background);
+            width: 100%;
+            height: 5vh;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1vh;
+            input[type=text]{
+                font-family: "Josefin Sans";
+                background-color: transparent;
+                border: none;
+                color: var(--create-task-input-text);
+                caret-color: $Bright-Blue;
+                height: 3vh;
+                font-size: 1.5vh;
+                &:focus{
+                    outline: none;
+                }
+            }
+            input[type=checkbox]{
+                appearance: none;
+                height: 20px;
+                width: 20px;
+                border: 1px solid $Dark-Grayish-Blue;
+                user-select: none;
+                border-radius: 50%;
+                margin: 0 5%;
+                position: relative;
+                &:checked::before{
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        background: $Check-Background;
+                        border-radius: 50%;
+                }
+                &:checked::after{
+                    content: url(/images/icon-check.svg);
+                    color: white;
+                    font-size: 12px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+        .task-background{
+            background-color: var(--task-background);
+            width: 100%;
+            height: 5vh;
+            border-radius: 0;
+            border-bottom: 1px var(--task-background-border-color) solid;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding-right: 5%;
+            .check-task{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: flex-start;
+                .checkbox{
+                    appearance: none;
+                    height: 20px;
+                    width: 20px;
+                    border: 1px solid $Dark-Grayish-Blue;
+                    user-select: none;
+                    border-radius: 50%;
+                    margin: 0 5%;
+                    position: relative;
+                    &:checked::before{
+                            content: "";
+                            width: 20px;
+                            height: 20px;
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            background: $Check-Background;
+                            border-radius: 50%;
+                    }
+                    &:checked::after{
+                        content: url(/images/icon-check.svg);
+                        color: white;
+                        font-size: 12px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+            
+            .task-text{
+                color: var(--task-text);
+                font-weight: 500;
+                font-size: 14px;
+            }
+            .close-task-icon{
+                height: 18px;
+                width: 18px;
+                background-image: url(/images/icon-cross.svg);
+                cursor: pointer;
+            }
+        }
+        .first-task{
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        .option-container{
+            background-color:var(--option-container-background);
+            width: 100%;
+            height: 5vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 0 5%;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+            .items-left{
+                color: $Very-Dark-Grayish-Blue-1;
+                font-size: 1.5vh;
+            }
+            .clear-completed{
+                color: $Very-Dark-Grayish-Blue-1;
+                font-size: 1.5vh;
+                cursor: pointer;
+                &:hover{
+                    color: white;
+                }
+            }
+        }
+    }
+    footer{
+        background-color: var(--footer-background);
+        width: 100%;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 20%;
+        border-radius: 6px;
+        margin-top: 2vh;
+        .show-all{
+            color: var(--footer-text);
+            font-size: 1.5vh;
+        }
+        .show-active{
+            color: var(--footer-text);
+            font-size: 1.5vh;
+        }
+        .show-completed{
+            color: var(--footer-text);
+            font-size: 1.5vh;
+        }
+        .active{
+            color: $Bright-Blue;
+        }
+    }
+}

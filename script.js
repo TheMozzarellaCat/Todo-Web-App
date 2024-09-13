@@ -125,12 +125,12 @@ themeIcon.addEventListener('click', () => {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     body.setAttribute('data-theme', newTheme);
     if(iconImageControl == 0){
-        themeIcon.src = "/images/icon-sun.svg"
-        mainImage.style.backgroundImage = "url(/images/bg-mobile-dark.jpg)"
+        themeIcon.src = "images/icon-sun.svg"
+        mainImage.style.backgroundImage = "url(images/bg-mobile-dark.jpg)"
         iconImageControl++
     }else{
         themeIcon.src = "/images/icon-moon.svg"
-        mainImage.style.backgroundImage = "url(/images/bg-mobile-light.jpg)"
+        mainImage.style.backgroundImage = "url(images/bg-mobile-light.jpg)"
         iconImageControl--
     }
 });

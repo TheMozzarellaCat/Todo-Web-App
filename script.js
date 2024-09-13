@@ -54,6 +54,11 @@ function createOptionContainer() {
     clearCompletedButton.addEventListener('click', clearCompletedTasks);
 
     container2.parentElement.appendChild(optionContainer);
+    const footer = document.querySelector("footer")
+    footer.style.display = "flex"
+    if(window.screen.width >= 1440){
+        optionContainer.appendChild(footer)
+    }
     optionCreated = true;
 }
 
@@ -111,10 +116,16 @@ function filterTasks(filter) {
     });
 }
 
+
 // Chinease ahhhh fucking function no idea what is does tbh too late to ponder bout it
 document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = 'dark';
     document.body.setAttribute('data-theme', savedTheme);
+    const footer = document.querySelector("footer")
+
+    if(window.screen.width >= 1440){
+        footer.style.display = "none"
+    }
 });
 const themeIcon = document.getElementById('themeSwitcher')
 let iconImageControl = 1

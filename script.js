@@ -129,7 +129,7 @@ themeIcon.addEventListener('click', () => {
         mainImage.style.backgroundImage = "url(images/bg-mobile-dark.jpg)"
         iconImageControl++
     }else{
-        themeIcon.src = "/images/icon-moon.svg"
+        themeIcon.src = "images/icon-moon.svg"
         mainImage.style.backgroundImage = "url(images/bg-mobile-light.jpg)"
         iconImageControl--
     }

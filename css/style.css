@@ -34,7 +34,7 @@ body {
 }
 
 main {
-  background-image: url(/images/bg-mobile-dark.jpg);
+  background-image: url(../images/bg-mobile-dark.jpg);
   background-size: cover;
   height: 20vh;
   padding: 4vh 6%;
@@ -97,7 +97,7 @@ main .todo-list-container .create-new-task input[type=checkbox]:checked::before 
   border-radius: 50%;
 }
 main .todo-list-container .create-new-task input[type=checkbox]:checked::after {
-  content: url(/images/icon-check.svg);
+  content: url(../images/icon-check.svg);
   color: white;
   font-size: 12px;
   position: absolute;
@@ -145,7 +145,7 @@ main .todo-list-container .task-background .check-task .checkbox:checked::before
   border-radius: 50%;
 }
 main .todo-list-container .task-background .check-task .checkbox:checked::after {
-  content: url(/images/icon-check.svg);
+  content: url(../images/icon-check.svg);
   color: white;
   font-size: 12px;
   position: absolute;
@@ -161,7 +161,7 @@ main .todo-list-container .task-background .task-text {
 main .todo-list-container .task-background .close-task-icon {
   height: 18px;
   width: 18px;
-  background-image: url(/images/icon-cross.svg);
+  background-image: url(../images/icon-cross.svg);
   cursor: pointer;
 }
 main .todo-list-container .first-task {
@@ -254,7 +254,7 @@ main footer .active {
     background-color: var(--background-color);
   }
   main {
-    background-image: url(/images/bg-desktop-dark.jpg);
+    background-image: url(../images/bg-desktop-dark.jpg);
     background-size: cover;
     height: 30vh;
     padding: 4vh 30%;
@@ -318,7 +318,7 @@ main footer .active {
     border-radius: 50%;
   }
   main .todo-list-container .create-new-task input[type=checkbox]:checked::after {
-    content: url(/images/icon-check.svg);
+    content: url(../images/icon-check.svg);
     color: white;
     font-size: 12px;
     position: absolute;
@@ -366,7 +366,7 @@ main footer .active {
     border-radius: 50%;
   }
   main .todo-list-container .task-background .check-task .checkbox:checked::after {
-    content: url(/images/icon-check.svg);
+    content: url(../images/icon-check.svg);
     color: white;
     font-size: 12px;
     position: absolute;
@@ -382,7 +382,7 @@ main footer .active {
   main .todo-list-container .task-background .close-task-icon {
     height: 18px;
     width: 18px;
-    background-image: url(/images/icon-cross.svg);
+    background-image: url(../images/icon-cross.svg);
     cursor: pointer;
   }
   main .todo-list-container .first-task {
